@@ -1,0 +1,9 @@
+Python: 3.14.6
+SHA-256 kaizen_v1.csv: 82cd0538aa2b0fa5b8d84cef3e52c8777e6e12f9be71426e91208477cbd71220
+SHA-256 validation_predictions.csv: 6e6db1a6d92e257f5afda1ddaf6ba27a6e83c3fe5169753114890d64e59a03da
+Train: n=6304, порог=8099, ориентация=greater-or-equal, BA=5089183/9924700
+Validation: n=1059, квартал=2025Q4, прогнозы={1: 1059}
+Baseline: {'TN': 547, 'FP': 0, 'FN': 512, 'TP': 0, 'recall0': Fraction(1, 1), 'recall1': Fraction(0, 1), 'BA': Fraction(1, 2), 'precision1': None}
+Пень: {'TN': 0, 'FP': 547, 'FN': 0, 'TP': 512, 'recall0': Fraction(0, 1), 'recall1': Fraction(1, 1), 'BA': Fraction(1, 2), 'precision1': Fraction(512, 1059)}
+Критерий ЛР8: не выполнен; оставить baseline
+Готово; входы не изменялись, результаты на test не вычислялись.

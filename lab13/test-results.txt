@@ -1,0 +1,11 @@
+test_correct_and_reread (test_demo.DemoTests.test_correct_and_reread) ... ok
+test_failure_does_not_forge_class (test_demo.DemoTests.test_failure_does_not_forge_class) ... ok
+test_invalid_and_duplicate_do_not_record (test_demo.DemoTests.test_invalid_and_duplicate_do_not_record) ... ok
+test_model_original_and_hash_check (test_demo.DemoTests.test_model_original_and_hash_check) ... ok
+test_review_chain (test_demo.DemoTests.test_review_chain) ... ok
+test_rule_changes_route_same_model (test_demo.DemoTests.test_rule_changes_route_same_model) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.220s
+
+OK
