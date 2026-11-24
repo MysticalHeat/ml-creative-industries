@@ -1,0 +1,361 @@
+bash-5.3$ python3 -B walkthrough.py
+A13-alpha-2.0: синтетическая заявка; технический показ, не пользовательский пилот.
+
+$ python3 -B demo.py --db <временная-БД> new demo-01 --evidence enough
+Ожидание: выполняются проверка и вызов модели...
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-01",
+    "evidence": "enough"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-01",
+    "status": "ok",
+    "model_id": "baseline-lr07-kaizen-v1",
+    "prediction": {
+      "target": "implemented_90d",
+      "class": 0
+    },
+    "limitations": [
+      "demo_only",
+      "constant_prediction",
+      "not_for_automatic_decisions"
+    ]
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Сведения отмечены как достаточные"
+  },
+  "route": "expert_action",
+  "final_class": null
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> act demo-01 correct --reason учебное основание --class 1
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-01",
+    "evidence": "enough"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-01",
+    "status": "ok",
+    "model_id": "baseline-lr07-kaizen-v1",
+    "prediction": {
+      "target": "implemented_90d",
+      "class": 0
+    },
+    "limitations": [
+      "demo_only",
+      "constant_prediction",
+      "not_for_automatic_decisions"
+    ]
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Сведения отмечены как достаточные"
+  },
+  "route": "expert_action",
+  "final_class": null,
+  "actions": [
+    {
+      "id": 1,
+      "action": "correct",
+      "reason": "учебное основание",
+      "result_class": 1,
+      "status": "recorded",
+      "recipient_role": null,
+      "next_step": null,
+      "actor_role": "условный эксперт",
+      "type": "simulation",
+      "model_updated": false,
+      "previous_id": null,
+      "timestamp_utc": "2026-11-24T06:13:58.096292+00:00"
+    }
+  ]
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> show demo-01
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-01",
+    "evidence": "enough"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-01",
+    "status": "ok",
+    "model_id": "baseline-lr07-kaizen-v1",
+    "prediction": {
+      "target": "implemented_90d",
+      "class": 0
+    },
+    "limitations": [
+      "demo_only",
+      "constant_prediction",
+      "not_for_automatic_decisions"
+    ]
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Сведения отмечены как достаточные"
+  },
+  "route": "expert_action",
+  "final_class": null,
+  "actions": [
+    {
+      "id": 1,
+      "action": "correct",
+      "reason": "учебное основание",
+      "result_class": 1,
+      "status": "recorded",
+      "recipient_role": null,
+      "next_step": null,
+      "actor_role": "условный эксперт",
+      "type": "simulation",
+      "model_updated": false,
+      "previous_id": null,
+      "timestamp_utc": "2026-11-24T06:13:58.096292+00:00"
+    }
+  ]
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> new demo-02 --evidence insufficient
+Ожидание: выполняются проверка и вызов модели...
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-02",
+    "evidence": "insufficient"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-02",
+    "status": "ok",
+    "model_id": "baseline-lr07-kaizen-v1",
+    "prediction": {
+      "target": "implemented_90d",
+      "class": 0
+    },
+    "limitations": [
+      "demo_only",
+      "constant_prediction",
+      "not_for_automatic_decisions"
+    ]
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Недостаточно сведений"
+  },
+  "route": "manual_review",
+  "final_class": null
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> act demo-02 confirm --reason учебный тест
+Ошибка: действие не подтверждено: Нет оснований для класса: доступна только ручная проверка
+Код выхода: 2
+
+$ python3 -B demo.py --db <временная-БД> act demo-02 review --reason недостаточно сведений --recipient условный эксперт
+--next-step уточнить сведения
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-02",
+    "evidence": "insufficient"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-02",
+    "status": "ok",
+    "model_id": "baseline-lr07-kaizen-v1",
+    "prediction": {
+      "target": "implemented_90d",
+      "class": 0
+    },
+    "limitations": [
+      "demo_only",
+      "constant_prediction",
+      "not_for_automatic_decisions"
+    ]
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Недостаточно сведений"
+  },
+  "route": "manual_review",
+  "final_class": null,
+  "actions": [
+    {
+      "id": 2,
+      "action": "review",
+      "reason": "недостаточно сведений",
+      "result_class": null,
+      "status": "pending_review",
+      "recipient_role": "условный эксперт",
+      "next_step": "уточнить сведения",
+      "actor_role": "условный эксперт",
+      "type": "simulation",
+      "model_updated": false,
+      "previous_id": null,
+      "timestamp_utc": "2026-11-24T06:13:58.313634+00:00"
+    }
+  ]
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> new demo-03 --evidence enough --simulate-model-error
+Ожидание: выполняются проверка и вызов модели...
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-03",
+    "evidence": "enough"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-03",
+    "status": "error",
+    "error": {
+      "code": "model_unavailable",
+      "message": "Модель недоступна; рассмотрите заявку вручную."
+    }
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Модель недоступна"
+  },
+  "route": "manual_review",
+  "final_class": null
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> act demo-03 review --reason модель недоступна --recipient условный эксперт --ne
+xt-step рассмотреть вручную
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-03",
+    "evidence": "enough"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-03",
+    "status": "error",
+    "error": {
+      "code": "model_unavailable",
+      "message": "Модель недоступна; рассмотрите заявку вручную."
+    }
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Модель недоступна"
+  },
+  "route": "manual_review",
+  "final_class": null,
+  "actions": [
+    {
+      "id": 3,
+      "action": "review",
+      "reason": "модель недоступна",
+      "result_class": null,
+      "status": "pending_review",
+      "recipient_role": "условный эксперт",
+      "next_step": "рассмотреть вручную",
+      "actor_role": "условный эксперт",
+      "type": "simulation",
+      "model_updated": false,
+      "previous_id": null,
+      "timestamp_utc": "2026-11-24T06:13:58.443915+00:00"
+    }
+  ]
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> show demo-03
+{
+  "version": "A13-alpha-2.0",
+  "request": {
+    "schema_version": "1.0",
+    "request_id": "demo-03",
+    "evidence": "enough"
+  },
+  "model": {
+    "schema_version": "1.0",
+    "request_id": "demo-03",
+    "status": "error",
+    "error": {
+      "code": "model_unavailable",
+      "message": "Модель недоступна; рассмотрите заявку вручную."
+    }
+  },
+  "knowledge": {
+    "version": "kaizen-rules-1.0",
+    "source": "Проект правил ЛР12, п. 1 и 4; отчёт ЛР2, с. 3 и 5 (роль эксперта и план проверки)",
+    "rule": "При недостаточности сведений не назначать итоговый класс и направить на ручную проверку; при достаточности
+допустить экспертное действие.",
+    "reason": "Модель недоступна"
+  },
+  "route": "manual_review",
+  "final_class": null,
+  "actions": [
+    {
+      "id": 3,
+      "action": "review",
+      "reason": "модель недоступна",
+      "result_class": null,
+      "status": "pending_review",
+      "recipient_role": "условный эксперт",
+      "next_step": "рассмотреть вручную",
+      "actor_role": "условный эксперт",
+      "type": "simulation",
+      "model_updated": false,
+      "previous_id": null,
+      "timestamp_utc": "2026-11-24T06:13:58.443915+00:00"
+    }
+  ]
+}
+Код выхода: 0
+
+$ python3 -B demo.py --db <временная-БД> new недопустимый ID --evidence enough
+Ожидание: выполняются проверка и вызов модели...
+Ошибка: действие не подтверждено: invalid_input: ID — 1–64 латинских букв, цифр, _ или -
+Код выхода: 2
+
+ДЕМО ЗАВЕРШЕНО: временная база удалена; сетевой отправки и реальных данных нет.
+bash-5.3$
