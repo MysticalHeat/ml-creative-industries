@@ -1,0 +1,10 @@
+{
+  "raw": 13535,
+  "agreement_checked": 9273,
+  "rule_disagreements": 0,
+  "incomplete_window_or_gap": 4242,
+  "duplicate_id_rows": 20,
+  "removed_small_groups": 0,
+  "released": 9273,
+  "smallest_released_group": 40
+}

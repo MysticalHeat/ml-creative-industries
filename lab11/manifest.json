@@ -1,0 +1,11 @@
+{
+  "model_id": "baseline-lr07-kaizen-v1",
+  "files": {
+    "baseline.py": "9b7adfa9a2b9d4f992da40fc999a43079b82da6c323baec96b6e6aacb9a829e6",
+    "model.json": "2caf0de861ba2c41694d3b352c52c58fa1f6c5885fdc604c1257655e76eace3e"
+  },
+  "source_data_sha256": "82cd0538aa2b0fa5b8d84cef3e52c8777e6e12f9be71426e91208477cbd71220",
+  "source_code_sha256": "01c9468b63df8a89f740048653d0d71caef3bcea3c8e79da457b35aabd007e4c",
+  "source_settings_sha256": "27d1d5c062384eecfb579ab41e0ae8499a6305b69dd297266d68bfc5cc87afd2",
+  "note": "Хеши исходников ЛР7 приведены для идентификации; исходные файлы в комплект не включены и локальным тестом не проверяются."
+}

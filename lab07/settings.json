@@ -1,0 +1,24 @@
+{
+  "data": "kaizen_v1",
+  "target": "implemented_90d",
+  "estimator": "train majority",
+  "tie_breaker": 0,
+  "prediction": 0,
+  "seed_model": null,
+  "seed_export_order": 42,
+  "split_periods": {
+    "train": [
+      "2024Q3",
+      "2024Q4",
+      "2025Q1",
+      "2025Q2"
+    ],
+    "validation": [
+      "2025Q4"
+    ],
+    "test": [
+      "2026Q2",
+      "2026Q3"
+    ]
+  }
+}

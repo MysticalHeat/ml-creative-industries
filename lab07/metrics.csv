@@ -1,0 +1,4 @@
+split,n,constant,tn,fp,fn,tp,accuracy,balanced_accuracy,precision_1,recall_1,f1_1
+train,6304,0,3254,0,3050,0,0.51618,0.5,0.0,0.0,0.0
+validation,1059,0,547,0,512,0,0.516525,0.5,0.0,0.0,0.0
+test,1910,0,869,0,1041,0,0.454974,0.5,0.0,0.0,0.0
